@@ -1,19 +1,20 @@
+var games = 0;
+var gamesWin = 0;
+var gamesLoose = 0;
+
 $('#shifumi').click(function() {
-      var games = 0;
-      var gamesWin = 0;
-      var gamesLoose = 0;
       var choiceBot = Math.floor(Math.random()*3)+1;
       var myChoice = $('select').val();
       if (choiceBot == myChoice) {
         alert('Égalité');
       } else if ((choiceBot == 3 && myChoice == 2)||
       (choiceBot == 2 && myChoice == 1)||(choiceBot == 1 && myChoice == 3)){
-        ++games;
-        ++gamesLoose;
+        games++;
+        gamesLoose++;
         alert('Perdu');
       } else {
-        ++games;
-        ++gamesWin;
+        games++;
+        gamesWin++;
         alert('Gagné');
       }
 

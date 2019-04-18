@@ -6,5 +6,13 @@ $('#button').click(function() {
   var employment = $('#employment').val();
   var society = $('#society').val();
 
-  alert(firstName + ' ' + lastName + ', né le ' + dateOfBirth + ' à ' + placeOfBirth + ', actuellement ' + employment + ' à ' + society + '.');
+  var regexName = /^[a-zA-Záàâäãåçéèêëíìîï]+[\-]?[a-zA-Záàâäãåçéèêëíìîï]$/;
+
+  if (regexName.test(lastName) === false) {
+    Swal.fire('Pas compris désolé');
+  } else if (regexName.test(firstName) === false) {
+    Swal.fire('Pas compris désolé');
+  } else {
+    Swal.fire(firstName + ' ' + lastName + ', né le ' + dateOfBirth + ' à ' + placeOfBirth + ', actuellement ' + employment + ' à ' + society + '.');
+  }
 });

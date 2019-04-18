@@ -18,4 +18,7 @@ $('#button').click(function() {
   } else {
     Swal.fire('Moyenne: ' + average + '\nAppréciation: Excellent!');
   }
+  if (average < 0 || average > 20) {
+    Swal.fire('Veuillez saisir des nombres valables!');
+  }
 });
